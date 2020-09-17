@@ -1,0 +1,77 @@
+.footer-logos {
+  padding-top: 40px;
+
+  @include media("<med") {
+    padding-bottom: 20px;
+  }
+
+  p,
+  a {
+    color: $white;
+    text-decoration: none;
+  }
+
+  svg {
+    fill: $white;
+
+    @include media("<med") {
+      margin-right: 20px;
+      width: 80PX!important;
+      height: 80PX!important;
+    }
+  }
+
+  &__pt {
+    margin-left: auto;
+    margin-right: -190px;
+
+    @include media("<med") {
+      text-align: center;
+      margin-top: 80px;
+      margin-right: 0px;
+      margin-left: 0px;
+    }
+  }
+
+  &__ma {
+    margin-left: auto;
+    @include media("<med") {
+      text-align: center;
+      margin-right: 0px;
+      margin-left: 0px;
+    }
+  }
+
+  .row {
+    @include media("<med") {
+      flex-direction: column-reverse;
+    }
+  }
+
+  .icon--logo {
+    margin-bottom: 20px;
+    @include media("<med") {
+      margin-right: 0px;
+    }
+  }
+
+  &--mobile-only {
+    @include media(">med") {
+      display: none;
+    }
+  }
+
+  &--desktop-only {
+    @include media("<med") {
+      display: none;
+    }
+  }
+}
+
+.apam {
+  width: 100PX;
+  @include media("<med") {
+    margin-top: 30px;
+    margin-right: 20px;
+  }
+}

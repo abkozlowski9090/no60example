@@ -1,0 +1,25 @@
+<div class="footer-logos">
+  <div class="container">
+    <div class="row row--reset-pad row--align-center row--flex-always">
+      <a href="https://www.apamuk.com/" class="">
+        <img class="apam" src="{{ theme.link }}/assets/images/apam.svg">
+      </a>
+      <a href="/" class="footer-logos--desktop-only logo-fix">
+        {% include 'atoms/icon.twig' with { 'icon': 'logo' } %}
+      </a>
+      <a href="https://www.cbre.co.uk/" class="cbre-fix">
+        {% include 'atoms/icon.twig' with { 'icon': 'cbre-1' } %}
+      </a>
+      <a href="https://www.cbre.co.uk/" class="savills-fix">
+        {% include 'atoms/icon.twig' with { 'icon': 'savills-agent-block' } %}
+      </a>
+      <a href="/" class="footer-logos--mobile-only">
+        {% include 'atoms/icon.twig' with { 'icon': 'logo' } %}
+      </a>
+    </div>
+    <div class="row row--reset-pad row--align-center row--mt-40">
+        <p class="footer-logos__pt">Site by <a href="http://persona.studio/" class="">Persona</a> | <a href="https://tilecreative.com/" class="">Tile.</a></p>
+        <p class="footer-logos__ma"><a href="http://no60.persona.studio/misrepresentations-act/" class="">Misrepresentations Act </a></p>
+    </div>
+  </div>
+</div>

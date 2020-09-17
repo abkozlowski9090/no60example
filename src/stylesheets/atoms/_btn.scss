@@ -1,0 +1,67 @@
+button,
+.btn {
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
+  border: 0;
+  cursor: pointer;
+  display: inline-flex;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+  font-weight: $base-bold-font-weight;
+  line-height: 42px;
+  height: 42px;
+  outline: none;
+  position: relative;
+  text-decoration: none;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+
+  i {
+    display: block;
+    position: relative;
+    width: 15px;
+    margin-left: 40px;
+    transform: translateY(-15px) rotate(35deg);
+    border-bottom: 1px solid $black;
+    transition: all $speed $easing;
+
+    @include media("<med") {
+      &:after {
+        top: 28.4PX!important;
+      }
+    }
+
+
+    &:after {
+      content: '';
+      position: absolute;
+      right: 0px;
+      top: 37.2PX;
+      transform: rotate(-40deg);
+      border-right: 1px solid $black;
+      border-bottom: 1px solid $black;
+      width: 7px;
+      height: 7px;
+    }
+  }
+
+  &--has-icon {
+    padding-left: $space-3x;
+  }
+
+  .icon {
+    position: absolute;
+    line-height: 1;
+    left: $space;
+    top: 50%;
+    margin-top: -10px;
+  }
+
+  svg {
+    fill: $white;
+    width: 20px; height: 20px;
+  }
+
+
+}

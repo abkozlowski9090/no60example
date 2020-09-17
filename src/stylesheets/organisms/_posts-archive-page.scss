@@ -1,0 +1,7 @@
+.posts-archive-page {
+
+
+  @include media("<med") {
+    padding-top: 0px;
+  }
+}

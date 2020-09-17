@@ -1,0 +1,54 @@
+.numbers-decor {
+  overflow: hidden;
+  position: absolute;
+
+  @include media("<med") {
+    display: none;
+  }
+
+  svg {
+    width: 400px;
+    height: 400px;
+  }
+
+  &--bl-0 {
+    left: -180px;
+    bottom: -50px;
+  }
+
+  &--br-0 {
+    right: -180px;
+    bottom: -50px;
+  }
+
+  &--tl-0 {
+    left: -180px;
+    top: -350px;
+  }
+
+  &--tr-0 {
+    right: -180px;
+    top: -120px;
+  }
+
+  &--bl-6 {
+    left: -200px;
+    bottom: -50px;
+  }
+
+  &--br-6 {
+    right: -180px;
+    bottom: -50px;
+  }
+
+  &--tl-6 {
+    left: -200px;
+    top: -400px;
+  }
+
+  &--tr-6 {
+    right: -200px;
+    top: -160px;
+  }
+
+}

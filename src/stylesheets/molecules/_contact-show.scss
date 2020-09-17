@@ -1,0 +1,230 @@
+.contact-show {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+
+  .h1 {
+    position: relative;
+    margin: 0 0 0.5em 0;
+    text-decoration: none;
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      border-bottom: 4px solid $white;
+
+      @include media("<med") {
+        display: none;
+      }
+    }
+  }
+
+  li {
+    list-style-type: none;
+    a {
+      text-decoration: none;
+    }
+  }
+
+  &.is-hidden {
+    display: none;
+    opacity: 0;
+    transition: all $speed $easing;
+  }
+
+  &__apam,
+  &__cbre {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 20px;
+
+    @include media("<med") {
+      flex-direction: column;
+      align-items: baseline;
+    }
+
+    .cbre {
+      margin-right: 20px;
+    }
+
+    &:nth-child(3) {
+      ul {
+        margin-right: 40px;
+      }
+    }
+
+    ul {
+      margin-right: 20px;
+    }
+  }
+
+  &__apam {
+    justify-content: start;
+    ul {
+      margin-left: 35px;
+      @include media("<med") {
+        margin-left: 0px;
+      }
+    }
+  }
+
+  &__column {
+    &--left-side {
+      display: flex;
+      align-items: flex-end;
+    }
+  }
+
+  .contact {
+    position: relative;
+
+    &__pop-out {
+      background: $grey;
+      z-index: 99999;
+      color: $white;
+      height: 117vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      opacity: 1;
+      transition: all $speed $easing;
+      &.show {
+        display: block;
+      }
+
+      .container {
+        @include media("<med") {
+          margin-top: 0;
+        }
+      }
+
+
+      @include media("<med") {
+        background: $grey;
+        height: 102vh;
+        position: fixed;
+        width: 100%;
+        display: flex;
+        z-index: 9999999;
+        top: -10px;
+      }
+    }
+}
+
+.icon--tl-6 {
+  z-index: 999999;
+  position: absolute;
+  left: -140px;
+  top: 90px;
+
+  svg {
+    width: 350px;
+    height: 350px;
+  }
+}
+
+.icon--br-0 {
+  z-index: 999999;
+  position: absolute;
+  right: -120px;
+  bottom: 0px;
+
+  svg {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+a {
+  color: $white;
+}
+
+
+.contact-cross {
+    display: block;
+    width: 20px;
+    height: 2rem;
+    position: relative;
+    float: left;
+    transition: all $speed $easing;
+    z-index: 999;
+    margin-top: 20px;
+
+    @include media("<med") {
+      float: none;
+      margin-top: 10%;
+    }
+
+    i {
+      width: 100%;
+      height: 1px;
+      background: $white;
+      position: absolute;
+      transition: all $speed-2x $easing;
+      &:nth-child(1) {
+        transform: translateY(12.5px) rotate(45deg);
+      }
+      &:nth-child(2) {
+        top: 85%;
+        margin-top: -0.16rem;
+        transform: translateY(-12.5px) rotate(-45deg);
+      }
+    }
+  }
+
+}
+
+.is-hidden {
+  display: none;
+}
+
+/**
+ * Mixins
+ */
+@mixin nth-animation-delay($items: 3, $time: 0.1s) {
+  @for $i from 1 through $items {
+
+    &:nth-child(#{$i}) {
+      animation-delay: $time * $i;
+    }
+  }
+}
+
+
+#contact-words {
+    overflow: hidden;
+    span {
+      @include nth-animation-delay();
+      display: inline-block;
+      animation: slide-up 0.8s ease-in-out both;
+    }
+}
+
+
+
+
+/**
+ * Animations
+ */
+@keyframes slide-up {
+  0% { opacity: 0; transform: translate3d(0, 100%, 0); }
+  90% { opacity: 1; }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.cbre {
+  width: 100px;
+  margin-bottom: 20px;
+}

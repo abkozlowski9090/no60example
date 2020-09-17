@@ -1,0 +1,5 @@
+{% if active %}
+  <div class="numbers-decor numbers-decor--{{ decor }}">
+    {% include 'atoms/icon.twig' with { 'icon': decor } %}
+  </div>
+{% endif %}

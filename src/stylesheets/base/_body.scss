@@ -1,0 +1,79 @@
+body {
+  transition: background-color 0.2s ease-in-out;
+  overflow-x: hidden;
+}
+
+.fade-grey {
+  background: $grey;
+}
+
+.fade-white {
+  background: $white;
+}
+
+.fade-black {
+  background: $black;
+}
+
+.fade-lightgrey {
+  background: $lightgrey;
+}
+
+.fade-undefined {
+  background: $white;
+}
+
+.hdr-grey {
+  color: $white!important;
+
+  .burger-nav-button {
+    i {
+      border: 1px solid $white;
+      &:before {
+      border-right: 1px solid $white!important;
+      }
+    }
+  }
+
+  .nav-main__link {
+    color: $white;
+  }
+
+  .icon--logo svg {
+    fill: $white;
+  }
+  .icon--download svg {
+    fill: $white;
+  }
+}
+
+.hdr-white {
+  color: $black!important;
+
+  .burger-nav-button {
+    i {
+      border: 1px solid $black;
+      &:before {
+      border-right: 1px solid $black!important;
+      }
+    }
+  }
+
+  .nav-main__link {
+    color: $black;
+  }
+
+  .icon--logo svg {
+    fill: $black;
+  }
+
+  .icon--download svg {
+    fill: $black;
+  }
+}
+
+.blog {
+  .icon--download svg {
+    fill: $white;
+  }
+}

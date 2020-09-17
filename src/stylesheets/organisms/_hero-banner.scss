@@ -1,0 +1,111 @@
+.hero-banner {
+  display: flex;
+  align-items: center;
+  height: 65vh;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  @include media(">lrg") {
+    min-height: 100%;
+  }
+
+  @include media("<med") {
+    overflow: hidden;
+  }
+
+  &__wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    @include media("<med") {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+
+  &__title {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    text-transform: none;
+    z-index: 9;
+    padding: 20px 20px;
+
+    @include media("<med") {
+      .h1 {
+        font-size: 64px;
+        text-align: left;
+      }
+    }
+
+    &[data-emergence=hidden] {
+    opacity: 0;
+    transform: translateY(40px);
+
+      // @include media("<med") {
+      //   opacity: 1;
+      // }
+    }
+
+    &[data-emergence=visible] {
+      opacity: 1;
+      transform: translateY(0px);
+      transition: all $speed-4x $easing;
+    }
+
+    p {
+      line-height: 1;
+    }
+
+
+    @include media("<med") {
+      margin-top: auto;
+      margin-bottom: auto;
+      padding: 0;
+    }
+  }
+
+  &--contact {
+    height: 100vh;
+    width: 100vw;
+
+    .hero-banner__title {
+      transform: none;
+    }
+  }
+
+  &--archive {
+    height: 40vh;
+
+    @include media("<med") {
+      height: 350PX;
+    }
+    .hero-banner__title {
+      transform: none;
+      padding-top: 175px;
+      @include media("<med") {
+        padding-top: 120PX;
+      }
+    }
+  }
+
+
+
+
+}
+
+#scroll {
+  margin-bottom: 50px;
+}
+
+#hero-banner-words {
+    overflow: hidden;
+    span {
+      @include nth-animation-delay();
+      display: inline-block;
+      animation: slide-up 0.8s ease-in-out both;
+    }
+}

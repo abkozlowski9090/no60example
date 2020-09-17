@@ -1,0 +1,164 @@
+.floor-list {
+
+  @include media("<med") {
+    padding: 20px 5px 0px;
+
+    .h2 {
+      font-size: $h5-font-size;
+      margin: 0;
+
+      @include media("<med") {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &--inactive {
+    color: $lightgrey;
+
+    .floor-list__item {
+      @include media("<med") {
+        border-right: 0px;
+      }
+    }
+  }
+
+  &__text {
+    margin-top: 40px;
+  }
+
+  &__wrapper {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    padding: 10px 40px;
+
+    @include media("<med") {
+      border-top: 1px solid $grey;
+    }
+
+    &:before {
+      content: '';
+      width: 90%;
+      position: absolute;
+      bottom: 0;
+      border-bottom: 1px solid $grey;
+    }
+
+    .floor-list__item {
+      &:last-child {
+        border-right: 0px;
+      }
+    }
+  }
+
+  &__facts {
+    padding: 5px 65px;
+    justify-content: space-between;
+    display: flex;
+    position: relative;
+
+
+    @include media("<med") {
+      border-top: 1px solid $grey;
+    }
+
+    &:before {
+      content: '';
+      width: 90%;
+      position: absolute;
+      bottom: 0;
+      border-bottom: 1px solid $grey;
+    }
+
+    .floor-list__item {
+      &:last-child {
+        border-right: 0px;
+      }
+    }
+
+    @include media("<lrg") {
+      &:before {
+        width: 100%;
+      }
+    }
+
+    @include media("<med") {
+      display: none;
+    }
+
+    p {
+      padding: 0px 10px;
+      margin: 0;
+    }
+  }
+
+
+
+
+  &__item {
+    width: 25%;
+    padding: 20px;
+    border-right: 1px solid $grey;
+    text-align: center;
+
+    .h2 {
+      font-size: 25px;
+    }
+
+    @include media ("<med") {
+      width: 100%;
+      padding: 5px 25px;
+
+      .h2 {
+        font-size: 16px;
+      }
+
+      p {
+        font-size: 10px;
+      }
+    }
+
+  }
+
+  &__icon-rows {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    @include media("<med") {
+      padding: 10px 0px;
+    }
+
+    .icon {
+      width: 80px;
+
+      @include media("<med") {
+        width: 50px;
+        height: 60px;
+      }
+    }
+
+    p {
+      @include media("<med") {
+        font-size: 11px;
+      }
+    }
+  }
+
+  &__icon-wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+  }
+
+  .col {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+}

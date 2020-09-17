@@ -1,0 +1,37 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+
+<header {{ (id) ? 'id="' ~ id ~ '"' : '' }} class="hero-banner">
+  <div class="container container--small">
+    <div class="row hero-banner__title">
+      <p class="h1">{{ post.title }}</p>
+    </div>
+  </div>
+</header>
+
+
+
+
+	<article class="single-post-content">
+		<div class="container single-post-content__container">
+	    <div class="row row--reset-pad row--reverse-cols">
+
+				{% include 'layout_builder.twig' with {
+					'layouts' : post.get_field('layout_builder_posts')
+				} %}
+
+
+		</div>
+	</div>
+</article>
+
+
+{%
+	include 'organisms/related_posts.twig'
+%}
+
+
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% if latest_news|length %}
+
+
+  <section {{ (id) ? 'id="' ~ id ~ '"' : '' }} data-bg-colour="{{ (content.options.section_options.background_colour) ? ''~content.options.section_options.background_colour~' ' : '' }}" class="latest-news  {{ (content.options.section_options.text_colour) ? ' colour--'~content.options.section_options.text_colour~' ' : '' }}{{ (content.options.section_options.css_classes) ? ' '~content.options.section_options.css_classes : '' }}" {{ (content.options.section_options.custom_css_styles) ? 'style="'~ content.options.section_options.custom_css_styles ~'"' : '' }}>
+  <div class="container">
+    <div class="row">
+
+      <div class="col col--4@lrg">
+        <p class="h1">The latest happening around Spring Gardens.</p>
+        <a class="btn" href="/latest-news"><span>View more news</span><i></i></a>
+      </div>
+
+      <div class="col col--6@xl">
+        <div class="row">
+          {% for news_post in latest_news %}
+            {% include "molecules/news-card.twig" with {
+              post_info: news_post
+            } %}
+          {% endfor %}
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  {% include "molecules/number-decor.twig" with {
+      decor: content.options.section_options.patterns,
+      active:  content.options.section_options.number_patterns
+  } %}
+</section>
+
+
+{% endif %}

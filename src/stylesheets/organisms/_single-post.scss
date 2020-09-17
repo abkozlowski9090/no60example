@@ -1,0 +1,13 @@
+.single-post-content {
+
+
+  &__container {
+    @include media("<med") {
+      padding: 0px;
+    }
+  }
+
+  section:first-child {
+    padding: 0px;
+  }
+}

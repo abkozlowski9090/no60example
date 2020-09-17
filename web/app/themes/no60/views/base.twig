@@ -1,0 +1,37 @@
+{% block html_head %}
+	{% include 'html-header.twig' %}
+	{% block head %}
+	{% endblock %}
+	</head>
+{% endblock %}
+
+	<body class="{{ body_class }} {{ (post.post_name == "homepage") ? 'fade-grey' : '' }} {{ (post.post_name == "space") ? 'fade-grey' : '' }}" data-template="base.twig" data-svg-sprite="{{ theme.link }}/assets/images/icons.svg" data-svg-sprite-revision="{{ svg_sprite_version }}">
+
+
+
+		{%
+		include 'organisms/site-header.twig'
+		%}
+
+		{% if post.post_name == "homepage" %}
+			{%
+			include 'organisms/splash-screen.twig'
+			%}
+		{% endif %}
+
+
+		<main role="main" class="site-main" id="js-site-main" data-module="backgroundscroll">
+			{% block content %}
+				Sorry, no content
+			{% endblock %}
+
+			{%
+			include 'organisms/site-footer.twig'
+			%}
+		</main>
+
+
+		{{ function('wp_footer') }}
+
+	</body>
+</html>

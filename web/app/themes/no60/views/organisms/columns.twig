@@ -1,0 +1,51 @@
+<section {{ (content.id) ? 'id="' ~ content.id ~ '"' : '' }} data-bg-colour="{{ (content.options.section_options.background_colour) ? ''~content.options.section_options.background_colour~' ' : '' }}" class="columns {{ (content.options.section_options.mobile_short_padding) ? ' mobile-short-padding'~ content.options.section_options.mobile_short_padding~ ' ' : '' }} {{ (content.options.section_options.text_colour) ? ' colour--'~ content.options.section_options.text_colour~ ' ' : '' }} {{ (content.pull_up_next_section) ? 'pull-up-next-section' : '' }} {{ (content.no_padding) ? 'no-padding' : '' }} {{ content.options.section_options.reset_vertical_padding }} {{ (content.options.section_options.class_list) ? ' '~content.options.section_options.class_list : '' }}" {{ (content.options.section_options.custom_css_styles) ? 'style="'~ content.options.section_options.custom_css_styles ~'"' : '' }}>
+  <div class="container">
+    <div class="row {{ (content.vertical_align_columns) ? 'row--align-center' : '' }} {{ (content.right_align_columns) ? 'row--flex-end' : '' }}">
+
+
+
+      <div class="col--10@lrg text--center" data-emergence="hidden">
+          {% if content.column_title.title_overlay %}
+          <div class="columns__title-overlay" data-emergence="hidden">
+            <p class="h1">{{ content.column_title.title }}</p>
+            {% if content.column_title.title_button %}
+              <a class="btn" href="{{content.column_title.title_button.url}}">{{content.column_title.title_button.title}}</a>
+            {% endif %}
+          </div>
+          {% else %}
+          <div class="columns__title" data-emergence="hidden">
+            <p class="h1">{{ content.column_title.title }}</p>
+            {% if content.column_title.title_button %}
+              <a class="btn" href="{{content.column_title.title_button.url}}">{{content.column_title.title_button.title}}</a>
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+
+
+    {% for column in content.columns %}
+      {% if loop.index0 == 0 %}
+        <div class="col {{ column.column_width }} {{ (content.vertical_align_columns) ? 'col--align-center' : '' }} {{ (content.right_align_columns) ? 'col--ml-auto' : '' }}" data-emergence="hidden">
+          {{ column.content }}
+          {% for button in column.buttons %}
+            {% include 'atoms/btn.twig' with {
+              'button': button.button
+            } %}
+          {% endfor %}
+        </div>
+      {% else %}
+        <div class="col {{ column.column_width }}" data-emergence="hidden">
+            {{ column.content }}
+            {% for button in column.buttons %}
+              {% include 'atoms/btn.twig' with {
+                'button': button.button
+              } %}
+            {% endfor %}
+        </div>
+      {% endif %}
+      {% endfor %}
+
+    </div>
+
+  </div>
+</section>

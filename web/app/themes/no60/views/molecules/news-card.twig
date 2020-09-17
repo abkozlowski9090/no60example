@@ -1,0 +1,18 @@
+
+<a href="{{ post_info.link }}" class="news-card">
+  <div class="news-card__image">
+    {% include 'atoms/picture.twig' with {
+      'alt': post_info.caption,
+      'images': {
+        'standard_img': TimberImage(post_info.thumbnail.src|resize(800)),
+        'standard_img_retina': TimberImage(post_info.thumbnail.src|resize(1200)),
+        'tablet_img': (image.sizes.medium) ? TimberImage(post_info.thumbnail.src|resize(700)) : TimberImage(post_info.thumbnail.src|resize(700)),
+        'mobile_img': (image.sizes.small) ? TimberImage(post_info.thumbnail.src|resize(600, 600)) : TimberImage(post_info.thumbnail.src|resize(800))
+      }
+    } %}
+  </div>
+
+  <div class="news-card__content">
+    <p class="h4"><strong>{{ post_info.post_title }}</strong></p>
+  </div>
+</a>

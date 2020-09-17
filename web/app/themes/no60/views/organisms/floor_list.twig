@@ -1,0 +1,89 @@
+<section {{ (content.id) ? 'id="' ~ content.id ~ '"' : '' }} data-bg-color="{{ (content.options.section_options.background_colour) ? ''~content.options.section_options.background_colour~' ' : '' }}" class="floor-list  {{ (content.options.section_options.text_colour) ? ' colour--'~ content.options.section_options.text_colour~ ' ' : '' }} {{ (content.pull_up_next_section) ? 'pull-up-next-section' : '' }} {{ content.options.section_options.reset_vertical_padding }} {{ (content.options.section_options.class_list) ? ' '~content.options.section_options.class_list : '' }}" {{ (content.options.section_options.custom_css_styles) ? 'style="'~ content.options.section_options.custom_css_styles ~'"' : '' }}>
+  <div class="container">
+
+
+
+
+      <div class="row">
+        <div class="col col--12@med">
+          <div class="floor-list__wrapper">
+            {% for item in content.floor_list.row %}
+              <div class="floor-list__item {{ (item.inactive_item) ? 'floor-list--inactive' : '' }}">
+                <p class="h2">{{ item.floor }}</p>
+                {% if item.inactive_item %}
+                  <p>Under Offer</p>
+                {% else %}
+                  <p>Available</p>
+                {% endif %}
+                <p class="h2">{{ item.size }}</p>
+              </div>
+            {% endfor %}
+        </div>
+        <div class="floor-list__facts">
+        <p>Total Space available: 21,921 sq ft</p>
+        <p>Offices range from 2,000 sq ft to 5,670 sq ft</p>
+      </div>
+
+        <div class="floor-list__icon-rows">
+          <div class="floor-list__icon-wrapper">
+            {% include 'atoms/icon.twig' with { 'icon': 'air-1' } %}
+            <p><strong>VRF Air Conditioning </strong> </p>
+          </div>
+            <div class="floor-list__icon-wrapper">
+            {% include 'atoms/icon.twig' with { 'icon': 'lg7-2' } %}
+            <p><strong>LED Lighting </strong> </p>
+          </div>
+          <div class="floor-list__icon-wrapper">
+            {% include 'atoms/icon.twig' with { 'icon': 'ceiling-3' } %}
+            <p><strong>Exposed Services </strong> </p>
+          </div>
+          <div class="floor-list__icon-wrapper">
+          {% include 'atoms/icon.twig' with { 'icon': 'manned-4' } %}
+          <p><strong>Manned Reception </strong> </p>
+          </div>
+        </div>
+        <div class="floor-list__icon-rows">
+            <div class="floor-list__icon-wrapper">
+            {% include 'atoms/icon.twig' with { 'icon': 'disabled-access-5' } %}
+            <p><strong>Full DDA </strong> </p>
+            </div>
+            <div class="floor-list__icon-wrapper">
+            {% include 'atoms/icon.twig' with { 'icon': 'under-floor-6' } %}
+            <p><strong>Channelled Grid </strong> </p>
+            </div>
+            <div class="floor-list__icon-wrapper">
+            {% include 'atoms/icon.twig' with { 'icon': 'parking-7' } %}
+            <p><strong>Car Parking</strong></p>
+            </div>
+            <div class="floor-list__icon-wrapper">
+            {% include 'atoms/icon.twig' with { 'icon': 'meeting-8' } %}
+            <p><strong>Meeting Room And<br>Touchdown Space </strong></p>
+            </div>
+        </div>
+        <div class="floor-list__icon-rows">
+            <div class="floor-list__icon-wrapper">
+            {% include 'atoms/icon.twig' with { 'icon': 'passenger-9' } %}
+            <p><strong>Two Passenger Lifts</strong> </p>
+            </div>
+            <div class="floor-list__icon-wrapper">
+            {% include 'atoms/icon.twig' with { 'icon': 'bike' } %}
+            <p><strong>Cycle Stores,<br>Changing And Drying<br>Facilities </strong></p>
+            </div>
+            <div class="floor-list__icon-wrapper">
+            {% include 'atoms/icon.twig' with { 'icon': 'wifi' } %}
+            <p><strong>Wifi In Reception </strong></p>
+            </div>
+            <div class="floor-list__icon-wrapper">
+            {% include 'atoms/icon.twig' with { 'icon': 'telecom' } %}
+            <p><strong>Telcom Enabled</strong> </p>
+            </div>
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+</section>

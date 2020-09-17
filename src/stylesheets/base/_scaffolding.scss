@@ -1,0 +1,199 @@
+/* Grid system, using flexbox */
+
+.container {
+  // max-width: 1560px;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 0 $gridGutter;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+
+  @include media("<med") {
+    padding: 0 30px;
+  }
+
+  &--fullwidth {
+    max-width: none;
+    padding: 0px;
+  }
+
+      &--small {
+      & > .row {
+      &:before,
+      &:after {
+        width: calc(99.99% * 1/10 - (#{$gridGutter*4} * 1/10));
+        @include media(">xl") {
+          content: '';
+        }
+      }
+    }
+  }
+}
+
+.row {
+  padding: $gridGutter/2 0;
+  width: 100%;
+  @include media(">sm") {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: $gridGutter 0;
+  }
+
+  &--flex-always {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: $gridGutter 0;
+  }
+
+  &--reset-pad {
+    padding: 0;
+  }
+
+  &--justify-center {
+    justify-content: center;
+  }
+
+  &--align-center {
+    align-items: center;
+  }
+
+  &--reverse-cols {
+    flex-direction: row-reverse;
+  }
+
+  &--space-evenly {
+    justify-content: space-evenly;
+  }
+
+  &--mt-40 {
+    margin-top: 40px;
+  }
+}
+
+.col {
+  position: relative;
+  padding: $gridGutter/2 0;
+  width: 100%;
+  flex: 0 0 100%;
+
+  @include media(">sm") {
+    flex: none;
+    padding: $gridGutter 0;
+  }
+
+  @include media(">lrg") {
+    padding: $gridGutter/2 0;
+  }
+
+  &--10 {
+    @each $size, $breakpoint in $gridBreakpoints {
+      &\@#{$size} {
+        @include media(">#{$size}") {
+          width: 100%;
+        }
+      }
+    }
+  }
+  &--9 {
+    @each $size, $breakpoint in $gridBreakpoints {
+      &\@#{$size} {
+        @include media(">#{$size}") {
+          width: calc(99.99% * 9/10 - (#{$gridGutter*2} * 9/10));
+        }
+      }
+    }
+  }
+  &--8 {
+    @each $size, $breakpoint in $gridBreakpoints {
+      &\@#{$size} {
+        @include media(">#{$size}") {
+          width: calc(99.99% * 8/10 - (#{$gridGutter*2} * 8/10));
+        }
+      }
+    }
+  }
+  &--7 {
+    @each $size, $breakpoint in $gridBreakpoints {
+      &\@#{$size} {
+        @include media(">#{$size}") {
+          width: calc(99.99% * 7/10 - (#{$gridGutter*2} * 7/10));
+        }
+      }
+    }
+  }
+  &--6 {
+    @each $size, $breakpoint in $gridBreakpoints {
+      &\@#{$size} {
+        @include media(">#{$size}") {
+          width: calc(99.99% * 6/10 - (#{$gridGutter*2} * 6/10));
+        }
+      }
+    }
+  }
+  &--5 {
+    @each $size, $breakpoint in $gridBreakpoints {
+      &\@#{$size} {
+        @include media(">#{$size}") {
+          width: calc(99.99% * 5/10 - (#{$gridGutter*2} * 5/10));
+        }
+      }
+    }
+  }
+  &--4 {
+    @each $size, $breakpoint in $gridBreakpoints {
+      &\@#{$size} {
+        @include media(">#{$size}") {
+          width: calc(99.99% * 4/10 - (#{$gridGutter*2} * 4/10));
+        }
+      }
+    }
+  }
+  &--3 {
+    @each $size, $breakpoint in $gridBreakpoints {
+      &\@#{$size} {
+        @include media(">#{$size}") {
+          width: calc(99.99% * 3/10 - (#{$gridGutter*2} * 3/10));
+        }
+      }
+    }
+  }
+  &--2 {
+    @each $size, $breakpoint in $gridBreakpoints {
+      &\@#{$size} {
+        @include media(">#{$size}") {
+          width: calc(99.99% * 2/10 - (#{$gridGutter*2} * 2/10));
+        }
+      }
+    }
+  }
+  &--1 {
+    @each $size, $breakpoint in $gridBreakpoints {
+      &\@#{$size} {
+        @include media(">#{$size}") {
+          width: calc(99.99% * 1/10 - (#{$gridGutter*2} * 1/10));
+        }
+      }
+    }
+  }
+
+  &--align-center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &--ml-auto {
+    margin-left: auto;
+  }
+}
+
+.grey-list {
+  list-style-type: none;
+  color: $lightgrey;
+}
+
+.mt-40 {
+  margin-top: 40px!important;
+}

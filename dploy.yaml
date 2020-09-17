@@ -1,0 +1,11 @@
+test:
+    scheme: ftp
+    host: 31.222.153.166
+    port: 21
+    user: no60
+    pass: YrvX9q4fMTS4
+    check: true
+    path:
+        local: web
+        remote: httpdocs
+    exclude: [".DS-Store","scss","*/.sass-cache",".git",".gitignore","src","composer.json",".composer"]

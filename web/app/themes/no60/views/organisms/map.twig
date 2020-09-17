@@ -1,0 +1,20 @@
+<section {{ (id) ? 'id="' ~ id ~ '"' : '' }} data-bg-colour="{{ (content.options.section_options.background_colour) ? ''~content.options.section_options.background_colour~' ' : '' }}" data-lazyload-carousel="false" class="map-wrapper  {{ (content.options.section_options.text_colour) ? ' colour--'~content.options.section_options.text_colour~' ' : '' }}{{ (content.options.section_options.css_classes) ? ' '~content.options.section_options.css_classes : '' }}" {{ (content.options.section_options.custom_css_styles) ? 'style="'~ content.options.section_options.custom_css_styles ~'"' : '' }}>
+  <div class="container">
+    <div class="map"
+    data-module="map"
+    >
+    </div>
+
+  </div>
+</section>
+
+
+<div id="mapval" data-markerpoint='[{% for loc in content.location %}["{{loc.coordinates_lng}}","{{loc.coordinates_lat}}"]{{ (loop.last) ? '' : ', ' }}{% endfor %}]'
+
+data-popupcontent='[{% for loc in content.location %}"{{loc.location_name}}"{{ (loop.last) ? '' : ', ' }}{% endfor %}]'
+
+data-popuptenants='[{% for loc in content.location %}"{{loc.tenants_text}}"{{ (loop.last) ? '' : ', ' }}{% endfor %}]'
+
+
+>
+</div>

@@ -1,0 +1,112 @@
+.columns {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: $space-4x 0;
+
+  @include media("<lrg") {
+    height: 100%;
+  }
+
+  .col {
+    p {
+      margin-right: 20px;
+      // margin-top: 40px;
+      margin-bottom: 0px;
+
+      @include media("<med") {
+        margin-right: 0px;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 80PX;
+
+    @include media("<med") {
+      margin-bottom: 0px!important;
+    }
+
+    .h1 {
+      padding: 0px 50px;
+      @include media("<med") {
+        font-size: 64px;
+        padding: 0px;
+        text-align: left;
+      }
+    }
+  }
+
+
+  &__title-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+
+
+    @include media("<med") {
+      position: relative;
+      margin-bottom: 40px;
+    }
+
+    .h1 {
+      color: $black;
+      padding: 0px 50px;
+      @include media("<med") {
+        padding: 0px;
+        text-align: left;
+      }
+    }
+
+    .btn {
+      z-index: 9;
+
+      @include media("<med") {
+        width: 100%;
+      }
+    }
+  }
+
+  &__title-overlay,
+  &__title,
+  .col {
+    &[data-emergence=hidden] {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all $speed-4x $easing;
+    }
+    &[data-emergence=visible] {
+      opacity: 1;
+      transform: translateY(0px);
+      transition: all $speed-4x $easing;
+    }
+  }
+
+
+
+}
+
+
+.map-keys {
+  .col {
+    padding: 0px;
+  }
+}
+
+.mob-m-2 {
+  @include media("<med") {
+    margin-top: 20px!important;
+    margin-bottom: 20px!important;
+  }
+}
+
+.mob-mt-0 {
+  @include media("<med") {
+    margin-top: 0px!important;
+  }
+}

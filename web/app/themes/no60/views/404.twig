@@ -1,0 +1,12 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<section {{ (id) ? 'id="' ~ id ~ '"' : '' }} data-bg-colour="grey" class="hero-banner">
+  <div class="container container--small">
+    <div class="row hero-banner__title">
+      <p class="h1">Sorry, we couldn't find what you're looking for.</p>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

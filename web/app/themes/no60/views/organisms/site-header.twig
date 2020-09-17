@@ -1,0 +1,26 @@
+{#
+include 'organisms/site-header.twig' with {
+  'title': STRING,
+  'icon': STRING,
+  'class_list': STRING,
+  'has_burger': BOOLEAN,
+  'menu' : STRING
+}
+#}
+{% include 'molecules/contact-show.twig' %}
+<header class="site-header {{ (post.post_name == "homepage") ? 'hdr-grey' : '' }} {{ (post.post_name == "space") ? 'hdr-grey' : '' }}" data-module="scroll">
+    <div class="row row--reset-pad row--align-center row--flex-always">
+      <a href="#" class="burger-nav-button site-header__burger" data-module="burgernav"><i></i>
+        <span class="burger-nav__menu-item">Menu </span>
+      </a>
+      <div class="site-header__menu">
+        {% include 'molecules/nav.twig' %}
+      </div>
+      <a href="/" class="site-header__logo">
+        {% include 'atoms/icon.twig' with { 'icon': 'logo' } %}
+      </a>
+      <a href="{{ options.brochure.url }}" class="site-header__download">
+        {% include 'atoms/icon.twig' with { 'icon': 'download' } %}
+      </a>
+    </div>
+</header>

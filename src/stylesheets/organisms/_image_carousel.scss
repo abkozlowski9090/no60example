@@ -1,0 +1,69 @@
+.image-carousel {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+
+
+  .container {
+    @include media("<med") {
+      width: 100%;
+      padding: 0px;
+    }
+  }
+  // display: none;
+  @include media(">lrg") {
+    width: 100vw;
+  }
+
+  &__carousel {
+    width: 100%;
+
+    .carousel-cell {
+      width: 100%;
+      height: auto;
+
+
+      img {
+        position: relative;
+        width: 100%;
+
+      }
+    }
+
+    .flickity-page-dots {
+      text-align: left;
+      bottom: 20px;
+      left: 20px;
+
+      .dot.is-selected {
+        background: $white;
+      }
+
+      .dot {
+        border-radius: 0;
+        width: 8px;
+        height: 8px;
+        background: #ffffff57;
+        opacity: 1;
+      }
+    }
+
+  }
+
+  &__box {
+    position: absolute;
+    top: 40%;
+    left: 20%;
+    padding: 0 $gridGutter;
+    z-index: 9;
+    text-align: center;
+
+    @include media("<med") {
+      top: 30%;
+      left: 0;
+      text-align: center;
+    }
+  }
+
+}

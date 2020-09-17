@@ -1,0 +1,24 @@
+<section {{ (id) ? 'id="' ~ id ~ '"' : '' }} data-bg-colour="{{ (content.options.section_options.background_colour) ? ''~content.options.section_options.background_colour~' ' : '' }}" data-lazyload-carousel="false" class="image-carousel  {{ (content.options.section_options.mobile_short_padding) ? ' mobile-short-padding'~ content.options.section_options.mobile_short_padding~ ' ' : '' }} {{ (content.options.section_options.text_colour) ? ' colour--'~content.options.section_options.text_colour~' ' : '' }}{{ (content.options.section_options.css_classes) ? ' '~content.options.section_options.css_classes : '' }}" {{ (content.options.section_options.custom_css_styles) ? 'style="'~ content.options.section_options.custom_css_styles ~'"' : '' }}>
+  <div class="container">
+    {% if content.text_overlay %}
+    <div class="image-carousel__box">
+      <p class="h1">{{content.title}}</p>
+    </div>
+    {% endif %}
+    <div class="image-carousel__carousel" data-module="imagecarousel" >
+      {% for image in content.image_carousel %}
+      <div class="carousel-cell">
+        {% include 'atoms/picture.twig' with {
+          'alt': image.caption,
+          'images': {
+            'standard_img': TimberImage(image.image.large.url|resize(1600, 830)),
+            'standard_img_retina': TimberImage(image.image.large.url|resize(2400, 1245)),
+            'tablet_img': (image.image.medium.url) ? TimberImage(image.image.medium.url|resize(900, 1200)) : TimberImage(image.image.medium.url|resize(900, 1200)),
+            'mobile_img': (image.image.small.url) ? TimberImage(image.image.small.url|resize(600, 900)) : TimberImage(image.image.small.url|resize(600, 900))
+          }
+        } %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

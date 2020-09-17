@@ -1,0 +1,23 @@
+section {
+  position: relative;
+  padding: $space-6x 0;
+  overflow: hidden;
+
+  &:first-child {
+    padding-top: $space-8x;
+
+    @include media("<med") {
+      padding-bottom: 0px;
+    }
+  }
+}
+
+.no-padding {
+  padding: 0!important;
+}
+
+.mobile-short-padding1 {
+  @include media("<med") {
+    padding: 0!important;
+  }
+}

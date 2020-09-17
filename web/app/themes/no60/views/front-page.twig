@@ -1,0 +1,29 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<div {{ (id) ? 'id="' ~ id ~ '"' : '' }} data-bg-colour="white" class="hero-banner hero-banner--archive">
+  <div class="container container--small">
+    <div class="row hero-banner__title" data-emergence="hidden">
+      <p class="h1">The latest happening around Spring Gardens.</p>
+    </div>
+  </div>
+</div>
+<div class="posts-archive-page">
+	<div class="container">
+		<div class="row">
+			<div class="col col--10@xl">
+				<div class="row">
+					{% for news_post in posts %}
+					<div class="col col--3@lrg">
+						{% include "molecules/news-card.twig" with {
+							post_info: news_post
+						} %}
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+
+	</div><!-- /content-wrapper -->
+{% endblock %}

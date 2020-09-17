@@ -1,0 +1,17 @@
+<section {{ (id) ? 'id="' ~ id ~ '"' : '' }} data-bg-colour="{{ (content.options.section_options.background_colour) ? ''~content.options.section_options.background_colour~' ' : '' }}" class="hero-banner  {{ (content.options.section_options.text_colour) ? ' colour--'~content.options.section_options.text_colour~' ' : '' }}{{ (content.options.section_options.css_classes) ? ' '~content.options.section_options.css_classes : '' }}" {{ (content.options.section_options.custom_css_styles) ? 'style="'~ content.options.section_options.custom_css_styles ~'"' : '' }}>
+  <div class="container container--small" data-scroll>
+      {% if content.force_scroll %}
+      <div class="row hero-banner__title">
+        <p class="h1" id="hero-banner-words">
+        <span>Welcome</span>
+        <span>to</span>
+        <span>No.60</span>
+        </p>
+    </div>
+      {% else %}
+      <div class="row hero-banner__title" data-emergence="hidden">
+        <p class="h1">{{ content.title }}</p>
+      </div>
+      {% endif %}
+  </div>
+</section>
